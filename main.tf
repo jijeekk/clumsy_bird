@@ -118,3 +118,11 @@ resource "aws_instance" "clumsy_bird" {
     Name = "${var.prefix}-${var.project}-${var.environment}-instance"
   }
 }
+
+resource "aws_s3_bucket" "example" {
+  bucket = "${var.prefix}-s3-${var.environment}"
+
+  tags = {
+    Name        = "${var.prefix}-s3-${var.environment}"
+  }
+}
